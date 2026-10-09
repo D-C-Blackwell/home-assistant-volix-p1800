@@ -1,6 +1,6 @@
 {
   "domain": "volix_p1800",
-  "name": "VOLIX P1800",
+  "name": "ALLPOWERS VOLIX P1800",
   "bluetooth": [
     {"local_name": "VOLIX P1800*"},
     {"service_uuid": "0000fff0-0000-1000-8000-00805f9b34fb"}
@@ -13,5 +13,5 @@
   "iot_class": "local_push",
   "issue_tracker": "https://github.com/D-C-Blackwell/home-assistant-volix-p1800/issues",
   "requirements": ["bleak-retry-connector>=4.0.0"],
-  "version": "0.1.2"
+  "version": "0.1.3"
 }

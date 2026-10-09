@@ -18,8 +18,8 @@ class VolixEntity(CoordinatorEntity):
         self._attr_device_info = DeviceInfo(
             identifiers={(DOMAIN, entry.unique_id)},
             name=entry.title,
-            manufacturer="VOLIX / ALLPOWERS",
-            model="P1800",
+            manufacturer="ALLPOWERS",
+            model="VOLIX P1800",
         )
 
     def unique(self, suffix: str) -> None:

@@ -1,6 +1,6 @@
-# Home Assistant VOLIX P1800
+# Home Assistant ALLPOWERS VOLIX P1800
 
-Local Bluetooth monitoring and control for the VOLIX P1800 power station. No ALLPOWERS cloud account is required.
+Local Bluetooth monitoring and control for the ALLPOWERS VOLIX P1800 power station. No ALLPOWERS cloud account is required.
 
 > [!CAUTION]
 > This is independent community software, not affiliated with VOLIX, ALLPOWERS, Home Assistant or ESPHome. Output controls are experimental: validate them on your own hardware before relying on automations.
@@ -72,11 +72,11 @@ For current proxy options and supported boards, consult the [ESPHome Bluetooth P
 ## Installation (development release)
 
 1. Add this repository to HACS as a custom integration repository.
-2. Install **VOLIX P1800** and restart Home Assistant.
+2. Install **ALLPOWERS VOLIX P1800** and restart Home Assistant.
 3. Ensure the station is within reliable Bluetooth range of the Home Assistant host or an active ESPHome Bluetooth proxy.
 4. Open **Settings -> Devices & services** and accept the discovered VOLIX P1800.
 
-If automatic discovery is not displayed, choose **Add integration -> VOLIX P1800**. The setup flow will list any unconfigured station currently visible in Home Assistant's Bluetooth cache.
+If automatic discovery is not displayed, choose **Add integration -> ALLPOWERS VOLIX P1800**. The setup flow will list any unconfigured station currently visible in Home Assistant's Bluetooth cache.
 
 ## Protocol credits
 
@@ -84,7 +84,7 @@ The packet format is derived from the MIT-licensed [`madninjaskillz/allpowers-bl
 
 ## Status
 
-Version `0.1.2` is a pre-release build undergoing validation with a physical VOLIX P1800. It should not yet be treated as a stable release.
+Version `0.1.3` is a pre-release build undergoing validation with a physical VOLIX P1800. It should not yet be treated as a stable release.
 
 ## License
 

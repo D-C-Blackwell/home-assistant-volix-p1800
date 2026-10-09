@@ -1,7 +1,7 @@
 {
   "config": {
     "step": {
-      "user": {"title": "Select a VOLIX P1800", "description": "Choose a station currently visible to a local Bluetooth adapter or Bluetooth proxy.", "data": {"address": "Station"}},
+      "user": {"title": "Select an ALLPOWERS VOLIX P1800", "description": "Choose a station currently visible to a local Bluetooth adapter or Bluetooth proxy.", "data": {"address": "Station"}},
       "bluetooth_confirm": {"title": "Add {name}", "description": "Set up {name} using a local Home Assistant Bluetooth adapter or Bluetooth proxy?"}
     },
     "abort": {"no_devices_found": "No unconfigured VOLIX P1800 is visible. Power on the station, disconnect its mobile app, and check that Home Assistant has a nearby connectable Bluetooth adapter or active ESPHome proxy."}

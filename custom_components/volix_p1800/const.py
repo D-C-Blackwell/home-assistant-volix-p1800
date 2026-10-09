@@ -3,6 +3,7 @@
 from typing import Final
 
 DOMAIN: Final = "volix_p1800"
+DISPLAY_NAME: Final = "ALLPOWERS VOLIX P1800"
 PLATFORMS: Final = ["binary_sensor", "sensor", "select", "switch"]
 
 SERVICE_UUID: Final = "0000fff0-0000-1000-8000-00805f9b34fb"
