@@ -11,7 +11,7 @@
         "description": "Set up {name} using a local Home Assistant Bluetooth adapter or Bluetooth proxy?"
       }
     },
-    "abort": {"no_devices_found": "No unconfigured VOLIX P1800 station is currently visible over Bluetooth."}
+    "abort": {"no_devices_found": "No unconfigured VOLIX P1800 is visible. Power on the station, disconnect its mobile app, and check that Home Assistant has a nearby connectable Bluetooth adapter or active ESPHome proxy."}
   },
   "entity": {
     "sensor": {
