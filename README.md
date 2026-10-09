@@ -15,6 +15,18 @@ A local Home Assistant integration for monitoring and controlling the ALLPOWERS 
 - ECO mode control
 - Mute, Standard and Fast charging-mode selection
 
+## Screenshots
+
+<table>
+  <tr>
+    <td align="center"><strong>Controls</strong></td>
+    <td align="center"><strong>Sensors</strong></td>
+  </tr>
+  <tr>
+    <td><img src="images/controls.png" alt="VOLIX P1800 controls in Home Assistant" width="400"></td>
+    <td><img src="images/sensors.png" alt="VOLIX P1800 sensors in Home Assistant" width="400"></td>
+  </tr>
+</table>
 ## Compatibility
 
 The integration has been tested with a physical VOLIX P1800 using an ESP32-C3 active Bluetooth proxy. Home Assistant can also use a compatible local Bluetooth adapter or another connectable Bluetooth proxy, although other proxy hardware has not yet been verified by this project.
