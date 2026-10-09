@@ -1,0 +1,12 @@
+{
+  "config": {
+    "step": {"bluetooth_confirm": {"title": "Add {name}", "description": "Set up {name} using a local Home Assistant Bluetooth adapter or Bluetooth proxy?"}},
+    "abort": {"bluetooth_discovery_required": "The station must first be discovered over Bluetooth."}
+  },
+  "entity": {
+    "sensor": {"battery_level": {"name": "Battery level"}, "input_power": {"name": "Input power"}, "output_power": {"name": "Output power"}, "remaining_time": {"name": "Estimated time remaining"}},
+    "binary_sensor": {"charging": {"name": "Charging"}, "discharging": {"name": "Supplying power"}},
+    "switch": {"ac_output": {"name": "AC output"}, "usb_output": {"name": "USB output"}, "car_charger": {"name": "Car charger"}, "eco_mode": {"name": "ECO mode"}},
+    "select": {"work_mode": {"name": "Charging mode"}}
+  }
+}
