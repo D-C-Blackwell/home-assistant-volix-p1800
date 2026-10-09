@@ -1,12 +1,17 @@
 {
   "config": {
     "step": {
+      "user": {
+        "title": "Select a VOLIX P1800",
+        "description": "Choose a station currently visible to a local Bluetooth adapter or Bluetooth proxy.",
+        "data": {"address": "Station"}
+      },
       "bluetooth_confirm": {
         "title": "Add {name}",
         "description": "Set up {name} using a local Home Assistant Bluetooth adapter or Bluetooth proxy?"
       }
     },
-    "abort": {"bluetooth_discovery_required": "The station must first be discovered over Bluetooth."}
+    "abort": {"no_devices_found": "No unconfigured VOLIX P1800 station is currently visible over Bluetooth."}
   },
   "entity": {
     "sensor": {
