@@ -15,20 +15,16 @@ Local Bluetooth monitoring and control for the VOLIX P1800 power station. No ALL
 - Mute, Standard and Fast charging-mode selection
 - Local operation without credentials or cloud access
 
-The integration deliberately does **not** expose an imaginary light, fan state, DC-input scheduling, temperatures, voltage or current. Those features require verified protocol evidence from real P1800 hardware.
+Additional station features will be added only after their Bluetooth data and control behaviour have been verified on a VOLIX P1800.
 
 ## Installation (development release)
 
 1. Add this repository to HACS as a custom integration repository.
 2. Install **VOLIX P1800** and restart Home Assistant.
-3. Ensure the station is visible to a Home Assistant Bluetooth adapter or active ESPHome Bluetooth proxy.
+3. Ensure the station is within reliable Bluetooth range of the Home Assistant host or an active ESPHome Bluetooth proxy.
 4. Open **Settings → Devices & services** and accept the discovered VOLIX P1800.
 
 Only one BLE client can normally control the station at a time. Disconnect the official mobile application and disable any dedicated ESPHome BLE-client firmware before configuring this integration. An ESP32 may remain in use as a standard active Bluetooth proxy.
-
-## Privacy and security
-
-The repository contains no device addresses, Wi-Fi credentials, Home Assistant tokens, API keys or private network details. The station address is learned through Home Assistant Bluetooth discovery and stored in Home Assistant's config entry.
 
 ## Protocol credits
 
@@ -36,7 +32,7 @@ The packet format is derived from the MIT-licensed [`madninjaskillz/allpowers-bl
 
 ## Status
 
-Version `0.1.0` is an early development release and still requires validation on Home Assistant with a physical VOLIX P1800.
+Version `0.1.0` is a private pre-release build undergoing validation with a physical VOLIX P1800. It should not yet be treated as a stable release.
 
 ## License
 
