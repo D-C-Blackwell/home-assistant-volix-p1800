@@ -1,39 +1,43 @@
-# Home Assistant ALLPOWERS VOLIX P1800
+# ALLPOWERS VOLIX P1800 for Home Assistant
 
-Local Bluetooth monitoring and control for the ALLPOWERS VOLIX P1800 power station. No ALLPOWERS cloud account is required.
+A local Home Assistant integration for monitoring and controlling the ALLPOWERS VOLIX P1800 power station over Bluetooth. It operates without an ALLPOWERS cloud account.
 
-> [!CAUTION]
-> This is independent community software, not affiliated with VOLIX, ALLPOWERS, Home Assistant or ESPHome. Output controls are experimental: validate them on your own hardware before relying on automations.
+## Features
 
-## Current features
-
-- Bluetooth discovery through a local Home Assistant adapter or ESPHome Bluetooth proxy
-- Battery level, input power, output power and estimated remaining runtime
-- Charging and power-supply activity indicators
-- AC output and USB output controls
-- Car-charger/12 V output and ECO mode controls
+- Automatic Bluetooth discovery
+- Battery level
+- Input and output power
+- Estimated remaining runtime
+- Charging and power-supply status
+- AC output control
+- USB output control
+- Car-charger/12 V output control
+- ECO mode control
 - Mute, Standard and Fast charging-mode selection
-- Local operation without credentials or cloud access
 
-Additional station features will be added only after their Bluetooth data and control behaviour have been verified on a VOLIX P1800.
+## Compatibility
 
-## Bluetooth requirements
+The integration has been tested with a physical VOLIX P1800 using an ESP32-C3 active Bluetooth proxy. Home Assistant can also use a compatible local Bluetooth adapter or another connectable Bluetooth proxy, although other proxy hardware has not yet been verified by this project.
 
-Home Assistant manages Bluetooth routing automatically. This integration does not bind the station to a particular adapter or ask the user to select a proxy.
+Support for other ALLPOWERS power-station models is not currently claimed.
 
-A connectable Bluetooth path can be provided by:
+Home Assistant selects the available Bluetooth connection automatically; the integration does not bind the station to a specific adapter or proxy. Keep the station within reliable Bluetooth range. Because the station normally accepts only one Bluetooth client at a time, disconnect the official mobile application before configuring or using the integration.
 
-- a Bluetooth adapter attached to the Home Assistant host;
-- an ESPHome Bluetooth proxy running on a BLE-capable ESP32, including an ESP32-C3; or
-- another connectable remote Bluetooth adapter supported by Home Assistant.
+## Installation with HACS
 
-An ESP8266 cannot act as a Bluetooth proxy because it has no Bluetooth radio. Place the adapter or proxy within reliable BLE range of the station and ensure it appears under **Settings -> Devices & services -> Bluetooth**.
+1. In HACS, add this repository as a custom repository with the **Integration** category.
+2. Download **ALLPOWERS VOLIX P1800**.
+3. Restart Home Assistant.
+4. Open **Settings -> Devices & services**.
+5. Accept the discovered VOLIX P1800, or select **Add integration -> ALLPOWERS VOLIX P1800** and choose the detected station.
 
-Only one BLE client can normally control the station at a time. Disconnect the official mobile application and disable any dedicated ESPHome BLE-client firmware before configuring this integration. A dedicated ESP32 may remain in use as a standard active Bluetooth proxy.
+If no station is listed, confirm that it is powered on, disconnected from the official mobile application and visible to a connectable Home Assistant Bluetooth adapter or active Bluetooth proxy.
 
-### Minimal ESP32-C3 ESPHome proxy example
+## Optional ESPHome Bluetooth proxy
 
-This generic example contains no installation-specific credentials. Keep the referenced values in ESPHome's `secrets.yaml`, or let the ESPHome device wizard create the Wi-Fi, API and OTA sections.
+An ESPHome Bluetooth proxy can extend Bluetooth coverage when the Home Assistant host is not close enough to the station. The proxy must use `active: true` because the integration connects to the station, subscribes to notifications and sends commands.
+
+The following example matches the ESP32-C3 configuration used during development. Store the referenced values in the ESPHome `secrets.yaml` file.
 
 ```yaml
 esphome:
@@ -65,27 +69,22 @@ bluetooth_proxy:
   active: true
 ```
 
-The proxy must use `active: true` because the integration establishes a connection, subscribes to notifications and sends commands. Do not include an `esp32_ble_client` for the station in the proxy configuration.
+Do not configure a dedicated `esp32_ble_client` for the station on the proxy. The Home Assistant integration manages the BLE connection itself.
 
-For current proxy options and supported boards, consult the [ESPHome Bluetooth Proxy documentation](https://esphome.io/components/bluetooth_proxy/) and [Home Assistant Bluetooth documentation](https://www.home-assistant.io/integrations/bluetooth/).
+For additional proxy options, see the [ESPHome Bluetooth Proxy documentation](https://esphome.io/components/bluetooth_proxy/) and [Home Assistant Bluetooth documentation](https://www.home-assistant.io/integrations/bluetooth/).
 
-## Installation (development release)
+## Project status
 
-1. Add this repository to HACS as a custom integration repository.
-2. Install **ALLPOWERS VOLIX P1800** and restart Home Assistant.
-3. Ensure the station is within reliable Bluetooth range of the Home Assistant host or an active ESPHome Bluetooth proxy.
-4. Open **Settings -> Devices & services** and accept the discovered VOLIX P1800.
+Version `0.1.3` is an early release tested against a physical VOLIX P1800. Feedback and testing with other compatible Home Assistant Bluetooth adapters and ESP32 proxy boards are welcome.
 
-If automatic discovery is not displayed, choose **Add integration -> ALLPOWERS VOLIX P1800**. The setup flow will list any unconfigured station currently visible in Home Assistant's Bluetooth cache.
+## Credits
 
-## Protocol credits
+The Bluetooth packet format is based on the MIT-licensed [`madninjaskillz/allpowers-ble`](https://github.com/madninjaskillz/allpowers-ble) project and the independently maintained MIT-licensed [`dedalodaelus/esphome-allpowers-ble`](https://github.com/dedalodaelus/esphome-allpowers-ble) implementation. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
-The packet format is derived from the MIT-licensed [`madninjaskillz/allpowers-ble`](https://github.com/madninjaskillz/allpowers-ble) project and the independently maintained MIT-licensed [`dedalodaelus/esphome-allpowers-ble`](https://github.com/dedalodaelus/esphome-allpowers-ble) implementation. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+This is an independent community project and is not affiliated with ALLPOWERS, VOLIX, Home Assistant or ESPHome.
 
-## Status
-
-Version `0.1.3` is a pre-release build undergoing validation with a physical VOLIX P1800. It should not yet be treated as a stable release.
+Development and documentation have been assisted by OpenAI Codex.
 
 ## License
 
-MIT
+This project is licensed under the [MIT License](LICENSE).
